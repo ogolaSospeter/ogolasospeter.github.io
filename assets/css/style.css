@@ -1435,7 +1435,7 @@ form .button-area {
 
 @media (max-width: 450px) {
     html {
-        font-size: 55%;
+        font-size: 30%;
     }
     body {
         padding-right: 0;
