@@ -1,4 +1,16 @@
 [{
+        "name": "Smart Shop Wardrobe",
+        "description": "A Project done in Flutter to provide a platform that would allow users to easily find the clothes they want to wear, and also provide a platform for the users to sell their clothes. The project is still under development.",
+        "image": "smartshop.jpg",
+        "category": "MobileApp",
+        "image1": "smartshop.jpg",
+        "link": "https://github.com/ogolaSospeter/Smart-Shop",
+        "links": {
+            "view": "#",
+            "code": "#"
+        }
+    },
+    {
         "name": "JKUSA Election Voting System",
         "description": "As an academic project during the 3.1 Semester, in a team of 5, we developed an election system that would help aleviate the problems around the elections.",
         "image1": "https://img.freepik.com/free-vector/internet-electronic-voting_74855-4428.jpg?w=740&t=st=1707500917~exp=1707501517~hmac=1dc9ae930fd1d183fcaafba76a6629ebfa86aa1aae879e5f09c36ec5ba4f65b2",
