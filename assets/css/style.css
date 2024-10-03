@@ -247,10 +247,10 @@ header .navbar ul li a:hover {
 }
 
 .home .image img {
-    width: 300px;
+    width: 250px;
     margin-left: 6rem;
-    height: 300px;
-    border-radius: 50%;
+    height: 250px;
+    border-radius: 30%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
