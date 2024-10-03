@@ -665,6 +665,7 @@ header .navbar ul li a:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    max-height: max-content;
 }
 
 .education .box-container .box {
@@ -694,8 +695,8 @@ header .navbar ul li a:hover {
 .education .box-container .box img {
     object-fit: cover;
     position: relative;
-    width: 110%;
-    height: 110%;
+    width: 140%;
+    height: 140%;
     border-radius: 10%;
 }
 
@@ -704,8 +705,11 @@ header .navbar ul li a:hover {
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    padding-left: 10rem;
     flex-wrap: wrap;
     flex: 1 1 70rem;
+    align-items: center;
+    padding-top: 2rem;
 }
 
 .education .box-container .box .content h3 {
