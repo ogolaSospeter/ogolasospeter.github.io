@@ -197,7 +197,7 @@ header .navbar ul li a:hover {
 }
 
 .work .heading span {
-    color: rgb(255, 230, 0);
+    color: rgb(5, 99, 116);
 }
 
 .work .button-group {
@@ -274,7 +274,7 @@ header .navbar ul li a:hover {
     height: 4.5rem;
     width: 100%;
     padding-left: 1rem;
-    background: #ffd900;
+    background: #015964;
 }
 
 .work .box-container .box .content .tag h3 {
