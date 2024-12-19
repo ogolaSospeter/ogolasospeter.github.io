@@ -187,7 +187,7 @@ header .navbar ul li a:hover {
 
 .work {
     /* background: #010124; */
-    background: linear-gradient(to bottom, #010136, #00003a);
+    background: linear-gradient(to bottom, #e3e3f3, #fbfbfc);
     margin-top: 5rem;
 }
 
@@ -197,7 +197,7 @@ header .navbar ul li a:hover {
 }
 
 .work .heading span {
-    color: rgb(5, 99, 116);
+    color: rgb(249, 250, 250);
 }
 
 .work .button-group {
