@@ -1,4 +1,17 @@
-[{
+[
+    {
+        "name": "Personal Expense Tracker",
+        "description": "The **Expense Tracker App** is a **Kotlin-based Android application** designed to help users efficiently manage their finances by tracking income and expenses. It features secure authentication, intuitive transaction categorization, and insightful visualizations to enhance financial awareness and budgeting.",
+        "image": "expense_tracker.png",
+        "category": "AndroidApp",
+        "image1": "expense_tracker.png",
+        "link": "https://github.com/ogolaSospeter/Expense-Tracker",
+        "links": {
+            "view": "#",
+            "code": "#"
+        }         
+    },
+    {
         "name": "Smart Shop Wardrobe",
         "description": "A Project done in Flutter to provide a platform that would allow users to easily find the clothes they want to wear, and also provide a platform for the users to sell their clothes. The project is still under development.",
         "image": "smartshop.png",
