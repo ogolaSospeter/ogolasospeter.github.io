@@ -1,7 +1,7 @@
 [
     {
         "name": "Personal Expense Tracker",
-        "description": "The **Expense Tracker App** is a **Kotlin-based Android application** designed to help users efficiently manage their finances by tracking income and expenses. It features secure authentication, intuitive transaction categorization, and insightful visualizations to enhance financial awareness and budgeting.",
+        "description": "This is a Kotlin-based Android application designed to help users efficiently manage their finances by tracking income and expenses. It features secure authentication, intuitive transaction categorization, and insightful visualizations to enhance financial awareness and budgeting.",
         "image": "expense_tracker.png",
         "category": "AndroidApp",
         "image1": "expense_tracker.png",
