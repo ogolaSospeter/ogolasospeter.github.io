@@ -7,6 +7,7 @@ import { FaArrowLeft, FaLock, FaChevronLeft, FaChevronRight } from "react-icons/
 export default function ResumeViewer() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const [numPages, setNumPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -80,19 +81,22 @@ export default function ResumeViewer() {
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const page = await (pdf as any).getPage(pageNum);
-    const container = containerRef.current;
-    const containerWidth = container?.clientWidth ?? 800;
+    // Use wrapper div width for accurate container size (not main padding)
+    const logicalWidth = wrapperRef.current?.clientWidth ?? 800;
     const dpr = window.devicePixelRatio || 1;
 
     const viewport = page.getViewport({ scale: 1 });
-    const scale = (containerWidth / viewport.width) * dpr;
+    // Logical scale fills the wrapper; multiply by dpr for sharp rendering
+    const scale = (logicalWidth / viewport.width) * dpr;
     const scaledViewport = page.getViewport({ scale });
+    const logicalHeight = scaledViewport.height / dpr;
 
-    // Set canvas internal resolution to match device pixel ratio (fixes mobile blur)
+    // Internal canvas size = high-res for sharpness
     canvas.width = scaledViewport.width;
     canvas.height = scaledViewport.height;
-    canvas.style.width = `${scaledViewport.width / dpr}px`;
-    canvas.style.height = `${scaledViewport.height / dpr}px`;
+    // CSS size = logical size so layout stays correct on all screens
+    canvas.style.width = "100%";
+    canvas.style.height = `${logicalHeight}px`;
 
     const ctx = canvas.getContext("2d");
     await page.render({ canvasContext: ctx, viewport: scaledViewport }).promise;
@@ -132,8 +136,8 @@ export default function ResumeViewer() {
       </header>
 
       {/* Canvas viewer */}
-      <main className="flex-1 flex flex-col items-center px-4 py-8 pt-10 md:pt-8" ref={containerRef}>
-        <div className="w-full max-w-3xl rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(139,92,246,0.15)] border border-white/10 bg-white relative">
+      <main className="flex-1 flex flex-col items-center px-4 py-8 pt-20 md:pt-8" ref={containerRef}>
+        <div ref={wrapperRef} className="w-full max-w-3xl rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(139,92,246,0.15)] border border-white/10 bg-white relative">
           {/* Watermark */}
           <div
             className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center overflow-hidden"
