@@ -82,13 +82,17 @@ export default function ResumeViewer() {
     const page = await (pdf as any).getPage(pageNum);
     const container = containerRef.current;
     const containerWidth = container?.clientWidth ?? 800;
+    const dpr = window.devicePixelRatio || 1;
 
     const viewport = page.getViewport({ scale: 1 });
-    const scale = containerWidth / viewport.width;
+    const scale = (containerWidth / viewport.width) * dpr;
     const scaledViewport = page.getViewport({ scale });
 
+    // Set canvas internal resolution to match device pixel ratio (fixes mobile blur)
     canvas.width = scaledViewport.width;
     canvas.height = scaledViewport.height;
+    canvas.style.width = `${scaledViewport.width / dpr}px`;
+    canvas.style.height = `${scaledViewport.height / dpr}px`;
 
     const ctx = canvas.getContext("2d");
     await page.render({ canvasContext: ctx, viewport: scaledViewport }).promise;
@@ -128,7 +132,7 @@ export default function ResumeViewer() {
       </header>
 
       {/* Canvas viewer */}
-      <main className="flex-1 flex flex-col items-center px-4 py-8" ref={containerRef}>
+      <main className="flex-1 flex flex-col items-center px-4 py-8 pt-10 md:pt-8" ref={containerRef}>
         <div className="w-full max-w-3xl rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(139,92,246,0.15)] border border-white/10 bg-white relative">
           {/* Watermark */}
           <div
@@ -184,8 +188,8 @@ export default function ResumeViewer() {
           </div>
         )}
 
-        <p className="mt-6 text-xs text-gray-600 italic text-center">
-          © 2026 Ogola Sospeter. All rights reserved. Unauthorized reproduction prohibited.
+        <p className="mt-4 text-xs text-gray-600 italic text-center">
+          © 2026 Ogola Sospeter. All rights reserved.
         </p>
       </main>
     </div>
