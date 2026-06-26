@@ -249,15 +249,11 @@ export const skillsData = [
     "icon": "/skills/mysql.png"
 },
 {
-    "name": "Docker",
-    "icon": "/skills/docker.svg"
-},
-{
     "name": "Git VCS",
     "icon": "/skills/git.png"
 },
 {
     "name": "GitHub",
-    "icon": "/skills/github.png"
+    "icon": "/skills/github.svg"
 }
 ]
