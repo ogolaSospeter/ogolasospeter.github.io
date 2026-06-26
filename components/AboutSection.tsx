@@ -103,9 +103,7 @@ export default function AboutSection() {
             </div>
 
             <Link
-              href="/OGOLA-SOSPETER-OKONGO_RESUME.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/resume"
               className="inline-flex items-center px-5 py-2 bg-purple-700 text-white rounded-lg shadow-lg hover:bg-purple-800 transition-colors duration-300 text-sm sm:text-base md:text-lg"
             >
               View Resume
