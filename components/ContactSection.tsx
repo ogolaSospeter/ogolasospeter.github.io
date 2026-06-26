@@ -10,6 +10,7 @@ import {
   FaCommentDots,
   FaPaperPlane,
 } from "react-icons/fa";
+// import emailjs from "@emailjs/browser"; // replaced with Web3Forms (no domain whitelist required)
 
 const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -64,6 +65,14 @@ const ContactSection = () => {
     }
 
     try {
+      // Web3Forms submission (replaces EmailJS which requires paid domain whitelisting)
+      // Old EmailJS call:
+      // const response = await emailjs.sendForm(
+      //   process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      //   process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      //   form,
+      //   { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
+      // );
       const data = new FormData(form);
       data.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY!);
 
