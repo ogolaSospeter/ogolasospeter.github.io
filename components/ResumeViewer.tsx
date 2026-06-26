@@ -48,7 +48,7 @@ export default function ResumeViewer() {
         const pdfjsLib = await import("pdfjs-dist");
         pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
 
-        const pdf = await pdfjsLib.getDocument("/resume.pdf").promise;
+        const pdf = await pdfjsLib.getDocument({ url: "/resume.pdf" }).promise;
         if (cancelled) return;
 
         pdfRef.current = pdf;
@@ -154,9 +154,8 @@ export default function ResumeViewer() {
             className="w-full block"
             style={{
               display: loading ? "none" : "block",
-              WebkitTouchCallout: "none",
-              // @ts-expect-error non-standard
-              WebkitUserSelect: "none",
+              WebkitTouchCallout: "none" as const,
+              WebkitUserSelect: "none" as const,
               pointerEvents: "none",
             }}
           />
