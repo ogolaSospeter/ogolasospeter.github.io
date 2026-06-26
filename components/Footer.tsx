@@ -56,17 +56,15 @@ const Footer = () => {
           <h3 className="text-base text-white pb-4 font-semibold">
             Contact Info
           </h3>
-          <div className="space-y-2">
-            <p className="text-sm text-gray-300 flex items-center justify-center md:justify-start">
-              <FaPhone className="mr-2 text-[#ffae00]" /> +254 7XX-XXX-XXX
+          <div className="flex flex-row flex-wrap justify-center md:justify-start gap-x-4 gap-y-1">
+            <p className="text-sm text-gray-300 flex items-center">
+              <FaPhone className="mr-1.5 text-[#ffae00]" /> +254 7XX-XXX-XXX
             </p>
-            <p className="text-sm text-gray-300 flex items-center justify-center md:justify-start">
-              <FaEnvelope className="mr-2 text-[#ffae00]" />{" "}
-              ogolasospeter62@gmail.com
+            <p className="text-sm text-gray-300 flex items-center">
+              <FaEnvelope className="mr-1.5 text-[#ffae00]" /> ogolasospeter62@gmail.com
             </p>
-            <p className="text-sm text-gray-300 flex items-center justify-center md:justify-start">
-              <FaMapMarkerAlt className="mr-2 text-[#ffae00]" /> Nairobi,
-              Kenya-00200
+            <p className="text-sm text-gray-300 flex items-center">
+              <FaMapMarkerAlt className="mr-1.5 text-[#ffae00]" /> Nairobi, Kenya
             </p>
           </div>
 
