@@ -71,7 +71,7 @@ export default function ResumeViewer() {
           </div>
 
           <iframe
-            src="/OGOLA-SOSPETER-OKONGO_RESUME.pdf#toolbar=0&navpanes=0&view=FitH"
+            src="/resume.pdf#toolbar=0&navpanes=0&view=FitH"
             className="w-full block"
             style={{ height: "90vh", border: "none" }}
             title="Ogola Sospeter Résumé"
