@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+    font-family: var(--font-nunito), system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    @apply text-[60.5%] overflow-x-hidden;
+  }
+
+  body {
+    @apply bg-gray-100 font-poppins antialiased text-gray-900;
+  }
+
+  /*  Consistent Text Scaling */
+  h1 {
+    @apply text-4xl sm:text-4xl md:text-5xl font-extrabold;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-3xl md:text-4xl font-bold;
+  }
+
+  h3 {
+    @apply text-xl sm:text-xl md:text-2xl font-semibold;
+  }
+
+  h4 {
+    @apply text-lg sm:text-lg md:text-xl font-semibold;
+  }
+
+  section {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24 px-2;
+  }
+
+
+  /*  Responsive Font Sizes */
+  @screen sm {
+    html {
+      font-size: 0.7rem;
+    }
+  }
+
+  @screen md {
+    html {
+      font-size: 0.8rem;
+    }
+  }
+
+  @screen lg {
+    html {
+      font-size: 0.9rem;
+    }
+  }
+
+  @screen xl {
+    html {
+      font-size: 1rem;
+    }
+  }
+
+  @screen 2xl {
+    html {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(235, 202, 245);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #420177;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/*  Pre-loader */
+.loader-container {
+  @apply fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-200 z-[10000];
+}
+
+.loader-container.fade-out {
+  @apply top-[-120%];
+}
+
+/*  Scroll to Top Button */
+#scroll-top {
+  @apply fixed right-8 top-[-140%] text-2xl rounded-full p-3 transition-all duration-700 bg-yellow-400 text-indigo-900 z-[1000];
+}
+
+#scroll-top.active {
+  @apply top-[calc(100%-12rem)];
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
